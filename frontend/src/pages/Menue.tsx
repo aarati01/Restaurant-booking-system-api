@@ -162,7 +162,7 @@ const Menu = () => {
         <div className="inputSection  ">
           <form
             onSubmit={handleSubmit}
-            className="m-6 flex justify-between gap-4 mt-20 bg-red-500"
+            className="m-6 flex justify-between gap-4 mt-20"
           >
             <input
               className=" border border-background w-1/2 h-12 "

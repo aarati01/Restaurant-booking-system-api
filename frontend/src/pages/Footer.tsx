@@ -1,11 +1,5 @@
-import React from 'react'
-
 const Footer = () => {
-  return (
-    <div className='fotterpage'>
-        
-    </div>
-  )
-}
+  return <div className="fotterpage bg-[(/image/background.jpg)]"></div>;
+};
 
-export default Footer
+export default Footer;
