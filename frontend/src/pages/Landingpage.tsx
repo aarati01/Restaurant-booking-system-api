@@ -25,6 +25,13 @@ export const LandingPage: React.FC = () => {
     roleChecker();
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % slides.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const slides = [
     {
       img: "image1.jpg",

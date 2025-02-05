@@ -1,9 +1,10 @@
-import React, { CSSProperties } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Navigation from "./Navigation";
 
 // Define the schema for validation
 const schema = yup
@@ -47,93 +48,75 @@ export const SignUpPage: React.FC = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <form onSubmit={handleSubmit(onSubmit)} style={styles.form}>
-        <h1 style={styles.heading as unknown as CSSProperties}>Sign Up</h1>
-
-        <div style={styles.inputGroup}>
-          <input
-            {...register("username")}
-            placeholder="Username"
-            style={styles.input}
+    <>
+      <Navigation />
+      <div
+        className="flex items-center justify-center min-h-screen bg-cover bg-center"
+        style={{ backgroundImage: "url('/image/background.jpg')" }}
+      >
+        <div className="bg-olive p-6 md:p-8 rounded-lg shadow-lg w-full max-w-md m-auto">
+          <img
+            src="loginLogo.jpg"
+            alt="logo of the signup"
+            className="w-24 h-24 m-auto block bg-black-600 border"
           />
-          <p style={styles.error}>{errors.username?.message}</p>
-        </div>
+          <h1 className="text-center text-2xl font-semibold text-gray-800 mb-4">
+            Sign Up
+          </h1>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <div>
+              <input
+                {...register("username")}
+                placeholder="Username"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <p className="text-red-500 text-sm mt-1">
+                {errors.username?.message}
+              </p>
+            </div>
 
-        <div style={styles.inputGroup}>
-          <input
-            {...register("password")}
-            type="password"
-            placeholder="Password"
-            style={styles.input}
-          />
-          <p style={styles.error}>{errors.password?.message}</p>
-        </div>
+            <div>
+              <input
+                {...register("password")}
+                type="password"
+                placeholder="Password"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <p className="text-red-500 text-sm mt-1">
+                {errors.password?.message}
+              </p>
+            </div>
 
-        <div style={styles.inputGroup}>
-          <input
-            {...register("email")}
-            type="email"
-            placeholder="Email"
-            style={styles.input}
-          />
-          <p style={styles.error}>{errors.email?.message}</p>
-        </div>
+            <div>
+              <input
+                {...register("email")}
+                type="email"
+                placeholder="Email"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email?.message}
+              </p>
+            </div>
 
-        <button type="submit" style={styles.button}>
-          Register
-        </button>
-        <Link to="/login">Already have an account? login from here</Link>
-      </form>
-    </div>
+            <button
+              type="submit"
+              className="w-full py-2 bg-background font-rufinab text-white rounded-md hover:bg-lime-800 transition duration-300"
+            >
+              Register
+            </button>
+
+            <p className="text-center text-gray-600 mt-2">
+              Already have an account?{" "}
+              <Link to="/login" className="text-blue-500 hover:underline">
+                Login here.
+              </Link>
+            </p>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 
-const styles = {
-  container: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh",
-    backgroundColor: "#f5f5f5",
-  },
-  form: {
-    backgroundColor: "#fff",
-    padding: "20px 30px",
-    borderRadius: "8px",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-    width: "100%",
-    maxWidth: "400px",
-  },
-  heading: {
-    textAlign: "center",
-    marginBottom: "20px",
-    color: "#333",
-    fontSize: "24px",
-  },
-  inputGroup: {
-    marginBottom: "15px",
-  },
-  input: {
-    width: "100%",
-    padding: "10px",
-    fontSize: "16px",
-    borderRadius: "4px",
-    border: "1px solid #ccc",
-  },
-  error: {
-    color: "red",
-    fontSize: "12px",
-    marginTop: "5px",
-  },
-  button: {
-    width: "100%",
-    padding: "10px 15px",
-    fontSize: "16px",
-    border: "none",
-    borderRadius: "4px",
-    backgroundColor: "#007BFF",
-    color: "#fff",
-    cursor: "pointer",
-  },
-};
+export default SignUpPage;

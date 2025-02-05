@@ -63,12 +63,12 @@ export const LoginPage: React.FC = () => {
 
   return (
     <>
+      <Navigation />
+
       <div
         className="flex items-center justify-center min-h-screen bg-cover bg-center"
         style={{ backgroundImage: "url('/image/background.jpg')" }}
       >
-        <Navigation />
-
         <div className="bg-olive p-6 md:p-8 rounded-lg shadow-lg w-full max-w-md m-auto  ">
           <img
             src="loginLogo.jpg"

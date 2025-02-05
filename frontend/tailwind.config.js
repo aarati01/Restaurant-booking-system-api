@@ -10,6 +10,7 @@ export default {
         lightGray: "#FFFFFF",
         olive: "#EBF0E4",
         background: "#233000",
+        navbar: "#305027",
       },
     },
   },

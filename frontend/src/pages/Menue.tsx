@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import Navigation from "./Navigation.tsx";
 
 const Menu = () => {
   const items = [
@@ -71,6 +73,7 @@ const Menu = () => {
   };
   return (
     <>
+      <Navigation />
       <div className="describtion  h-[30rem] bg-lightGray  text-black   text-xl">
         <div className=" flex h-[5rem] ml-4">
           <div className="menueSection relative w-1/2 h-full  ">

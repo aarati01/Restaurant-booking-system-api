@@ -4,7 +4,8 @@ import { SignUpPage } from "./pages/Signup";
 import { LandingPage } from "./pages/Landingpage";
 import { Homepage } from "./pages/Homepage";
 import { Protected } from "./utils/Protected";
-import Contact from "./pages/contact"; 
+import Menue from "./pages/Menue";
+// import Contact from "./pages/contact";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/contact" element={<Contact />} /> {/* Correctly imported */}
+        {/* <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/menue" element={<Menue />} />
+        {/* Correctly imported */}
         <Route
           path="/home"
           element={
